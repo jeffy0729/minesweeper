@@ -1,0 +1,122 @@
+<view class="container">
+  <view class="header">
+    <text class="title">🏆 排行榜</text>
+    <button class="back-btn" bindtap="goBack">返回</button>
+  </view>
+
+  <view class="tabs">
+    <view class="tab {{currentTab === 'easy' ? 'active' : ''}}" data-tab="easy" bindtap="switchTab">简单</view>
+    <view class="tab {{currentTab === 'medium' ? 'active' : ''}}" data-tab="medium" bindtap="switchTab">中等</view>
+    <view class="tab {{currentTab === 'hard' ? 'active' : ''}}" data-tab="hard" bindtap="switchTab">困难</view>
+  </view>
+
+  <view class="rank-list">
+    <view wx:if="{{ranks.length === 0}}" class="empty">暂无记录</view>
+    <block wx:else>
+      <view class="rank-item" wx:for="{{ranks}}" wx:key="index">
+        <view class="rank-num {{index < 3 ? 'top' : ''}}">{{index + 1}}</view>
+        <view class="rank-time">{{item.time}}秒</view>
+        <view class="rank-date">{{item.dateStr}}</view>
+      </view>
+    </block>
+  </view>
+</view>
+
+<style>
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  padding: 30rpx;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #fff;
+}
+
+.back-btn {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 28rpx;
+  padding: 16rpx 32rpx;
+  border-radius: 30rpx;
+  border: 2rpx solid rgba(255,255,255,0.2);
+}
+
+.back-btn::after {
+  display: none;
+}
+
+.tabs {
+  display: flex;
+  gap: 20rpx;
+  margin-bottom: 40rpx;
+}
+
+.tab {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx;
+  color: #7f8c8d;
+  font-size: 30rpx;
+  border-radius: 16rpx;
+  background: rgba(255,255,255,0.05);
+}
+
+.tab.active {
+  color: #fff;
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.rank-list {
+  background: rgba(0,0,0,0.2);
+  border-radius: 20rpx;
+  padding: 20rpx;
+}
+
+.empty {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 60rpx;
+  font-size: 28rpx;
+}
+
+.rank-item {
+  display: flex;
+  align-items: center;
+  padding: 24rpx;
+  border-bottom: 1rpx solid rgba(255,255,255,0.1);
+}
+
+.rank-num {
+  width: 60rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #7f8c8d;
+}
+
+.rank-num.top {
+  color: #f39c12;
+  font-size: 36rpx;
+}
+
+.rank-time {
+  flex: 1;
+  font-size: 32rpx;
+  color: #fff;
+  font-weight: bold;
+}
+
+.rank-date {
+  font-size: 24rpx;
+  color: #7f8c8d;
+}
+</style>

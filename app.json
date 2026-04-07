@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/game/game",
+    "pages/rank/rank"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#1a1a2e",
+    "navigationBarTitleText": "扫雷小游戏",
+    "navigationBarTextStyle": "white",
+    "backgroundColor": "#1a1a2e"
+  },
+  "sitemapLocation": "sitemap.json"
+}

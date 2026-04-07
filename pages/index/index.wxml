@@ -1,0 +1,118 @@
+<view class="container">
+  <view class="title">💣 扫雷小游戏</view>
+  <view class="subtitle">Mine Sweeper</view>
+
+  <view class="menu">
+    <button class="menu-btn easy" bindtap="startGame" data-level="easy">
+      <text class="level">简单</text>
+      <text class="size">9 × 9 · 10 💣</text>
+    </button>
+    <button class="menu-btn medium" bindtap="startGame" data-level="medium">
+      <text class="level">中等</text>
+      <text class="size">16 × 16 · 40 💣</text>
+    </button>
+    <button class="menu-btn hard" bindtap="startGame" data-level="hard">
+      <text class="level">困难</text>
+      <text class="size">16 × 30 · 99 💣</text>
+    </button>
+  </view>
+
+  <view class="actions">
+    <button class="action-btn" bindtap="goRank">🏆 排行榜</button>
+  </view>
+</view>
+
+<style>
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80rpx 40rpx;
+}
+
+.title {
+  font-size: 56rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 16rpx;
+  text-shadow: 0 4rpx 20rpx rgba(0,0,0,0.5);
+}
+
+.subtitle {
+  font-size: 28rpx;
+  color: #7f8c8d;
+  margin-bottom: 80rpx;
+  letter-spacing: 4rpx;
+}
+
+.menu {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32rpx;
+}
+
+.menu-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40rpx;
+  border-radius: 24rpx;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.menu-btn::after {
+  display: none;
+}
+
+.menu-btn .level {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 12rpx;
+}
+
+.menu-btn .size {
+  font-size: 26rpx;
+  color: rgba(255,255,255,0.8);
+}
+
+.easy {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  box-shadow: 0 8rpx 32rpx rgba(39, 174, 96, 0.4);
+}
+
+.medium {
+  background: linear-gradient(135deg, #e67e22 0%, #f39c12 100%);
+  box-shadow: 0 8rpx 32rpx rgba(230, 126, 34, 0.4);
+}
+
+.hard {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+  box-shadow: 0 8rpx 32rpx rgba(231, 76, 60, 0.4);
+}
+
+.menu-btn:active {
+  transform: scale(0.96);
+}
+
+.actions {
+  margin-top: 60rpx;
+}
+
+.action-btn {
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+  font-size: 32rpx;
+  padding: 24rpx 60rpx;
+  border-radius: 50rpx;
+  border: 2rpx solid rgba(255,255,255,0.2);
+}
+
+.action-btn::after {
+  display: none;
+}
+</style>

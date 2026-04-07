@@ -1,0 +1,141 @@
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30rpx 40rpx;
+  background: rgba(0,0,0,0.2);
+}
+
+.info-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-label {
+  font-size: 22rpx;
+  color: #7f8c8d;
+  margin-bottom: 8rpx;
+}
+
+.info-value {
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #fff;
+  font-family: monospace;
+}
+
+.status-btn {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50rpx;
+  border: none;
+}
+
+.status-btn::after {
+  display: none;
+}
+
+.board {
+  padding: 20rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+  gap: 4rpx;
+  background: #2c3e50;
+  padding: 8rpx;
+  border-radius: 12rpx;
+}
+
+.cell {
+  width: 56rpx;
+  height: 56rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  font-weight: bold;
+  border-radius: 8rpx;
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  color: #fff;
+}
+
+.cell.opened {
+  background: #2c3e50;
+}
+
+.cell.mine {
+  background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+}
+
+.cell.flagged {
+  color: #e74c3c;
+}
+
+.cell.num-1 { color: #3498db; }
+.cell.num-2 { color: #2ecc71; }
+.cell.num-3 { color: #e74c3c; }
+.cell.num-4 { color: #9b59b6; }
+.cell.num-5 { color: #f39c12; }
+.cell.num-6 { color: #1abc9c; }
+.cell.num-7 { color: #34495e; }
+.cell.num-8 { color: #7f8c8d; }
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 60rpx;
+  border-radius: 32rpx;
+  text-align: center;
+  width: 70%;
+}
+
+.modal-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.modal-result {
+  font-size: 32rpx;
+  color: #ccc;
+  margin-bottom: 40rpx;
+}
+
+.modal-btn {
+  background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+  color: #fff;
+  font-size: 32rpx;
+  padding: 24rpx 60rpx;
+  border-radius: 50rpx;
+  border: none;
+  margin: 10rpx;
+}
+
+.modal-btn.secondary {
+  background: rgba(255,255,255,0.1);
+}
+
+.modal-btn::after {
+  display: none;
+}
