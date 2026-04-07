@@ -1,11 +1,11 @@
 <view class="game-header">
   <view class="info-box">
-    <text class="info-label">⏱️ 时间</text>
+    <text class="info-label">时间</text>
     <text class="info-value">{{time}}</text>
   </view>
   <button class="status-btn" bindtap="resetGame">{{gameOver ? (win ? '🎉' : '💥') : '🙂'}}</button>
   <view class="info-box">
-    <text class="info-label">💣 剩余</text>
+    <text class="info-label">剩余</text>
     <text class="info-value">{{mineCount - flagCount}}</text>
   </view>
 </view>
@@ -20,7 +20,7 @@
         data-index="{{index}}">
         <text wx:if="{{item.opened && item.mine}}">💣</text>
         <text wx:elif="{{item.opened && item.count > 0}}">{{item.count}}</text>
-        <text wx:elif="{{item.flagged}}">🚩</text>
+        <text wx:elif="{{item.flagged}}">⚑</text>
       </view>
     </block>
   </view>
@@ -28,7 +28,7 @@
 
 <view class="modal" wx:if="{{gameOver}}">
   <view class="modal-content">
-    <view class="modal-title">{{win ? '🎉 胜利!' : '💥 游戏结束'}}</view>
+    <view class="modal-title">{{win ? '胜利!' : '游戏结束'}}</view>
     <view class="modal-result" wx:if="{{win}}">用时: {{time}}秒</view>
     <view class="modal-result" wx:else>踩到雷了!</view>
     <button class="modal-btn" bindtap="resetGame">再来一局</button>
